@@ -7,11 +7,11 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
 </head>
 <body>
+    <nav><a href="{% url 'post_new' %}">+ New Blog Post</a></nav>
     <h1><a href="{% url 'home' %}">Blog</a></h1>
     <div>
         {% block content %}
         {% endblock content%}
-
     </div>
 </body>
 </html>
