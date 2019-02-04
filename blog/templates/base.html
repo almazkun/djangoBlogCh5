@@ -9,6 +9,11 @@
 <body>
     <nav><a href="{% url 'post_new' %}">+ New Blog Post</a></nav>
     <h1><a href="{% url 'home' %}">Blog</a></h1>
+    {% if user.is_authenticated %}
+        <p> Hi {{ user.username }}!</p>
+    {% else %}
+        <p><a href="{% url 'login' %}">Log In</a></p>
+    {% endif %}
     <div>
         {% block content %}
         {% endblock content%}
